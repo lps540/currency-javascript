@@ -60,7 +60,7 @@ var validate = function(s) {
         return 'Negative amounts not allowed.';
     } else if (s.length > 13) {
         return 'Amount too large, quadrillion not supported.';
-    } else if (! /^\d{1,13}(\.\d{2})?$/.test(s)) {
+    } else if (! /^\d{0,13}(\.\d{2})?$/.test(s)) {
         return 'Amount not recognized.';
     } else {
         return null;
@@ -94,8 +94,8 @@ var pronounceBase = function(s) {
             return pronounceBase(s.substring(1));
         } else if (s.substring(0, 1) === '1') {
             return teensMap[s.substring(1)];
-        } else if (s.substring(0, 1).trim() === '0') {
-            return teensMap[s.substring(0, 1)] + pronounceBase(s.substring(1));
+        } else if (s.substring(1).trim() === '0') {
+            return tensMap[s.substring(0, 1)] + pronounceBase(s.substring(1));
         } else {
             return tensMap[s.substring(0, 1)] + '-' + pronounceBase(s.substring(1));
         }
@@ -111,7 +111,7 @@ var pronounce1 = function(list) {
     var size = list.length;
     if (size === 1) {
         return pronounceBase(list[0]);
-    } else if (list[0] === '000') {
+    } else if (list[0] === '000' | list[0] === '00' | list[0] === '0') {
         return pronounce1(list.slice(1));
     } else {
         return pronounceBase(list[0]) + ' ' + clusterMap[size] + ' ' + pronounce1(list.slice(1));
@@ -135,9 +135,15 @@ var pronounce = function(currency) {
         return 'Zero dollars';
     } else if (t === 'one') {
         return 'One dollar';
+    } else if (firstPart === '') {
+        return 'Zero' + t + ' dollars';
     } else {
         return t.substring(0, 1).toUpperCase() + t.substring(1) + ' dollars';
     }
 };
 
-module.exports.pronounce = pronounce;
+try {
+    module.exports.pronounce = pronounce;
+} catch (ex) {
+    console.log('module.exports only supported in nodeunit testing.')
+}

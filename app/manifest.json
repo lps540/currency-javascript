@@ -1,6 +1,6 @@
 {
     "name": "Currency",
-    "description": "Tests the notification API",
+    "description": "Converts a number into currency words. Uses the Chrome Notification API.",
     "manifest_version": 2,
     "version": "0.0.1",
     "app": {

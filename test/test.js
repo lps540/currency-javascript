@@ -14,7 +14,7 @@ exports['calculate'] = function (test) {
     test.equal("One million dollars", p.pronounce("1000000"));
     test.equal("One million one dollars", p.pronounce("1000001"));
     test.equal("One and 23/100 dollars", p.pronounce("1.23"));
-    test.equal("23/100 dollars", p.pronounce("0.23"));
+    test.equal("Zero and 23/100 dollars", p.pronounce(".23"));
 
     test.done();
 };
