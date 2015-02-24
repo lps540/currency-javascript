@@ -1,0 +1,23 @@
+@import "compass";
+
+$textcolor: hsl(0, 0%, 0%);
+$errorColor: hsl(0, 100%, 90%);
+$fontFamily: "Comic Sans MS", sans-serif;
+$fontSize: 12pt;
+
+html, body {
+    height: 100%;
+    text-align: center;
+}
+
+label {
+    margin-right: 10px;
+}
+
+body {
+    @include background-image(linear-gradient(left top, hsl(240,20%,100%), hsl(240,20%,90%)));
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $textcolor;
+}
+
