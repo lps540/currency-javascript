@@ -60,7 +60,7 @@ var validate = function(s) {
         return 'Negative amounts not allowed.';
     } else if (s.length > 13) {
         return 'Amount too large, quadrillion not supported.';
-    } else if (! /^\d{0,13}(\.\d{2})?$/.test(s)) {
+    } else if (! /^\d{1,13}(\.\d{2})?$/.test(s)) {
         return 'Amount not recognized.';
     } else {
         return null;
@@ -139,3 +139,5 @@ var pronounce = function(currency) {
         return t.substring(0, 1).toUpperCase() + t.substring(1) + ' dollars';
     }
 };
+
+module.exports.pronounce = pronounce;

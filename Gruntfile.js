@@ -10,8 +10,8 @@ module.exports = function (grunt) {
         react: {
             app: {
                 options: {
-                    extension:    'jsx',
-                    ignoreMTime:  false
+                    extension: 'jsx',
+                    ignoreMTime: false
                 },
                 files: {
                     'app/scripts': 'app/jsx'
@@ -87,6 +87,12 @@ module.exports = function (grunt) {
                     dot: true,
                     src: ['dist/*']
                 }]
+            },
+            generated: {
+                files: [{
+                    dot: true,
+                    src: ['app/scripts/app.js']
+                }]
             }
         },
 
@@ -98,7 +104,8 @@ module.exports = function (grunt) {
             all: [
                 'Gruntfile.js',
                 'app/scripts/*.js',
-                'test/spec/*.js'
+                'test/spec/*.js',
+                '!app/scripts/app.js'
             ]
         },
 
@@ -117,11 +124,17 @@ module.exports = function (grunt) {
                     ],
                     dest: 'dist'
                 }]
-            },
+            }
         },
+        nodeunit: {
+            all: ['test/*.js'],
+            options: {
+                reporter: 'default'
+            }
+        }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-compass');
+    //grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('serve', function (target) {
         if (target === 'dist') {
@@ -138,8 +151,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'react',
-        'connect:test'
-    ]);
+        'nodeunit']);
 
     grunt.registerTask('build', [
         'clean:dist',
@@ -148,8 +160,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'newer:jshint',
         'test',
         'build'
     ]);
+
 };

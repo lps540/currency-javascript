@@ -3,6 +3,6 @@ dist
 .tmp
 .sass-cache
 app/scripts/app.js
-app/styles
+app/styles/*.css
 .idea
 .DS_Store
