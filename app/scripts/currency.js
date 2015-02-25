@@ -79,25 +79,25 @@ var chunkify = function(s) {
     return chunkify1(s, []).reverse();
 };
 
-var pronounceBase = function(s) {
+var pronounceCluster = function(s) {
     var size = s.length;
     switch (size) {
     case 3:
         if (s.substring(0, 1) === '0') {
-            return pronounceBase(s.substring(1));
+            return pronounceCluster(s.substring(1));
         } else {
-            return onesMap[s.substring(0, 1)] + ' hundred ' + pronounceBase(s.substring(1));
+            return onesMap[s.substring(0, 1)] + ' hundred ' + pronounceCluster(s.substring(1));
         }
         break;
     case 2:
         if(s.substring(0, 1) === '0') {
-            return pronounceBase(s.substring(1));
+            return pronounceCluster(s.substring(1));
         } else if (s.substring(0, 1) === '1') {
             return teensMap[s.substring(1)];
         } else if (s.substring(1).trim() === '0') {
-            return tensMap[s.substring(0, 1)] + pronounceBase(s.substring(1));
+            return tensMap[s.substring(0, 1)] + pronounceCluster(s.substring(1));
         } else {
-            return tensMap[s.substring(0, 1)] + '-' + pronounceBase(s.substring(1));
+            return tensMap[s.substring(0, 1)] + '-' + pronounceCluster(s.substring(1));
         }
         break;
     case 1:
@@ -110,11 +110,11 @@ var pronounceBase = function(s) {
 var pronounce1 = function(list) {
     var size = list.length;
     if (size === 1) {
-        return pronounceBase(list[0]);
+        return pronounceCluster(list[0]);
     } else if (list[0] === '000' || list[0] === '00' || list[0] === '0') {
         return pronounce1(list.slice(1));
     } else {
-        return pronounceBase(list[0]) + ' ' + clusterMap[size] + ' ' + pronounce1(list.slice(1));
+        return pronounceCluster(list[0]) + ' ' + clusterMap[size] + ' ' + pronounce1(list.slice(1));
     }
 };
 
