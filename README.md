@@ -1,4 +1,4 @@
-# reactjs-compass-example
+# currency-javascript
 
 Converts a number into currency words. 123.45 becomes "One hundred twenty-three and 45/100 dollars".
 
