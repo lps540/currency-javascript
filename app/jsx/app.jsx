@@ -34,4 +34,8 @@ var App = React.createClass({
     }
 });
 
+// Fake out module statement at bottom of currency.js to facilitate nodeunit testing.
+var module = {};
+module.exports = {};
+
 React.renderComponent(<App />, document.getElementById('app'));

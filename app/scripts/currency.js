@@ -142,8 +142,5 @@ var pronounce = function(currency) {
     }
 };
 
-try {
-    module.exports.pronounce = pronounce;
-} catch (ex) {
-    console.log('module.exports only supported in nodeunit testing.');
-}
+module.exports = pronounce;
+
