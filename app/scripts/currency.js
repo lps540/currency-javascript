@@ -111,7 +111,7 @@ var pronounce1 = function(list) {
     var size = list.length;
     if (size === 1) {
         return pronounceBase(list[0]);
-    } else if (list[0] === '000' | list[0] === '00' | list[0] === '0') {
+    } else if (list[0] === '000' || list[0] === '00' || list[0] === '0') {
         return pronounce1(list.slice(1));
     } else {
         return pronounceBase(list[0]) + ' ' + clusterMap[size] + ' ' + pronounce1(list.slice(1));
@@ -145,5 +145,5 @@ var pronounce = function(currency) {
 try {
     module.exports.pronounce = pronounce;
 } catch (ex) {
-    console.log('module.exports only supported in nodeunit testing.')
+    console.log('module.exports only supported in nodeunit testing.');
 }
