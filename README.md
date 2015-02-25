@@ -2,9 +2,8 @@
 
 Converts a number into currency words. 123.45 becomes "One hundred twenty-three and 45/100 dollars".
 
-This project uses ReactJS and Compass. 
-
-This is a Chrome desktop app. It uses the notification API to demonstrate that a Chrome app can access the underlying OS.
+This project uses ReactJS and Compass. Although it can be developed using the Chrome browser, this is a Chrome desktop application.
+It uses the notification API to demonstrate that a Chrome app can access the underlying OS.
 
 Prerequisites  
 
@@ -12,13 +11,13 @@ Prerequisites
 
 Setup  
 
-Development time:
+At development time:
 
 1. npm install
 2. grunt serve (uses livereload)
-Note: the notification button will not work while in the browser. It is a app-only feature.
+Note: the notification button will not work in the browser. It is an app-only feature.
 
-Production time:
+At production time:
 
 1. npm install
 2. grunt build
@@ -28,4 +27,4 @@ Production time:
 * Go to More Tools/Extensions.
 * Check "Developer mode" at the top of the Extensions page.
 * Click "Load unpacked extension...", select the directory: YOUR_PROJECT_DIR/dist.
-* Click "Launch" for the Currency app.
+* Click the "Launch" under the Currency app.
