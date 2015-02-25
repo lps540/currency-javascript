@@ -2,8 +2,8 @@
 
 Converts a number into currency words. 123.45 becomes "One hundred twenty-three and 45/100 dollars".
 
-This project uses ReactJS and Compass. Although it can be developed using the Chrome browser, this is a Chrome desktop application.
-It uses the notification API to demonstrate that a Chrome app can access the underlying OS.
+This project uses React and Compass. Although it can be developed using the Chrome browser, this is a Chrome desktop application.
+It uses the notification API to demonstrate that a Chrome app, written in HTML and Javascript, can access the underlying OS.
 
 Prerequisites  
 
@@ -24,7 +24,7 @@ At production time:
 3. Launch the Chrome App:
 
 * Start the Chrome Browser.
-* Go to More Tools/Extensions.
+* Go to "More Tools/Extensions".
 * Check "Developer mode" at the top of the Extensions page.
 * Click "Load unpacked extension...", select the directory: YOUR_PROJECT_DIR/dist.
-* Click the "Launch" under the Currency app.
+* Click the "Launch" button under the Currency app.
