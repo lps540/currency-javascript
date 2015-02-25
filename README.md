@@ -11,20 +11,20 @@ Prerequisites
 
 Setup  
 
-At development time:
+To run in the Chrome browser:
 
 1. npm install
 2. grunt serve (uses livereload)
 Note: the notification button will not work in the browser. It is an app-only feature.
 
-At production time:
+To run the Chrome app:
 
 1. npm install
 2. grunt build
 3. Launch the Chrome App:
 
 * Start the Chrome Browser.
-* Go to "More Tools/Extensions".
+* Select "Window/Extensions" on the menu bar, or use the control icon and select "More Tools/Extensions".
 * Check "Developer mode" at the top of the Extensions page.
 * Click "Load unpacked extension...", select the directory: YOUR_PROJECT_DIR/dist.
 * Click the "Launch" button under the Currency app.
