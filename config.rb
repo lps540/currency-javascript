@@ -6,4 +6,4 @@ sass_dir = "app/sass"
 images_dir = "app/images"
 javascripts_dir = "app/scripts"
 
-git ad
+
