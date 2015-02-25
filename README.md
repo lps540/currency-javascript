@@ -2,12 +2,12 @@
 
 Converts a number into currency words. 123.45 becomes "One hundred twenty-three and 45/100 dollars".
 
-This project uses React and Compass. Although it can be developed using the Chrome browser, this is a Chrome desktop application.
-It uses the notification API to demonstrate that a Chrome app, written in HTML and Javascript, can access the underlying OS.
+This project uses React and Compass to build a Chrome desktop application. Although it is a desktop application, it can be developed using the Chrome browser (i.e., grunt serve). This app uses the notification API to demonstrate that a Chrome app, written in HTML and Javascript, can access the underlying OS.
 
 Prerequisites  
 
-1. Install Compass: http://compass-style.org/install/
+1. Install Node.js: http://nodejs.org/
+2. Install Compass: http://compass-style.org/install/
 
 Setup  
 
